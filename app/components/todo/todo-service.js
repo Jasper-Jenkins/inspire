@@ -1,7 +1,7 @@
 function TodoService() {
 	// A local copy of your todos
 	var todoList = []
-	var baseUrl = 'https://bcw-sandbox.herokuapp.com/api/YOURNAME/todos'
+	var baseUrl = 'https://bcw-sandbox.herokuapp.com/api/Jasper/todos'
 
 	function logError(err) {
 		console.error('UMM SOMETHING BROKE: ', err)
@@ -10,6 +10,7 @@ function TodoService() {
 	}
 
 	this.getTodos = function (draw) {
+		//@ts-ignore
 		$.get(baseUrl)
 			.then(function (res) { // <-- WHY IS THIS IMPORTANT????
 				
@@ -19,6 +20,7 @@ function TodoService() {
 
 	this.addTodo = function (todo) {
 		// WHAT IS THIS FOR???
+		//@ts-ignore
 		$.post(baseUrl, todo)
 			.then(function(res){ // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
 				
@@ -33,11 +35,12 @@ function TodoService() {
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 
 		//STEP 3: Here is that weird Ajax request because $.put doesn't exist
+		//@ts-ignore
 		$.ajax({
 			method: 'PUT',
 			contentType: 'application/json',
 			url: baseUrl + '/' + todoId,
-			data: JSON.stringify(YOURTODOVARIABLEHERE)
+			data: JSON.stringify(todoList)
 		})
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?

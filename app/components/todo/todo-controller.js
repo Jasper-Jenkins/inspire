@@ -18,6 +18,15 @@ function TodoController() {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
+		for(var j = 0; j < todos.length; j++){
+			var todoItem = todos[j]
+			template += `
+					<input = 
+	
+			`
+
+		}
+		document.getElementById('todo').innerHTML = template
 		//DONT FORGET TO LOOP
 	}
 
