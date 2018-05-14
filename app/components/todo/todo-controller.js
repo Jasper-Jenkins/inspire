@@ -21,14 +21,9 @@ function TodoController() {
 			var d = new Date();
 			document.getElementById("time").innerHTML = d.toLocaleTimeString();
 		}
-		// var HMS = new Date();
-		// var hours = HMS.getHours();
-		// var minutes = HMS.getMinutes();
-		// var template = ""
-		// template = `<span>${hours} : ${minutes}</span>`
-		// document.getElementById('time').innerHTML = template; 
 	}
 	drawTime()
+
 	function draw(todos) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
@@ -37,7 +32,6 @@ function TodoController() {
 		console.log(todosarr)
 		var template = ''
 		document.getElementById('todoCount').innerText = todosarr.length
-
 		for (var j = 0; j < todosarr.length; j++) {
 
 			var todoItem = todosarr[j]
@@ -51,15 +45,10 @@ function TodoController() {
 				<div><input type="checkbox" id="${todoItem._id}" onclick="app.controllers.toDoController.toggleTodoStatus('${todoItem._id}', ${getTodos})" checked><span class="todoFormat"> ${todoItem.description.strike()}</span>
 				<i onclick="app.controllers.toDoController.removeTodo('${todoItem._id}')"class="fas fa-trash-alt"></i></div>
 				`
+			}
 		}
-
-
-		}
-
 		document.getElementById('todolist').innerHTML = template
 		//DONT FORGET TO LOOP
-
-
 	}
 	getTodos()
 
